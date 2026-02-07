@@ -1,19 +1,20 @@
-const express = require ("express");
+// File: routes/taskroutes.js
+const express = require("express");
 const router = express.Router(); 
 
+// Import the functions from the separate controller file
 const {
   getTasks,
   createTask,
-  getTask,
-  upadateTask,
-  deletetask
-} = require("../controllers/taskController");
-
+  getTaskByid,
+  updateTask,
+  deleteTask
+} = require("../controllers/taskcontrollers"); // Ensure this path is correct
 
 router.get("/", getTasks);
 router.post("/", createTask);
-router.get("/",getTask);
-router.put("/",upadateTask);
-router.delete("/",deletetask);
+router.get("/:id", getTaskByid);
+router.put("/:id", updateTask); // This will now find a real function
+router.delete("/:id", deleteTask);
 
 module.exports = router; 

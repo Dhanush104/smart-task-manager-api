@@ -1,22 +1,21 @@
-exports.getTasks = (req,res) =>{
-    res.send("Get  all tasks controllers ");
+// File: controllers/taskcontrollers.js
 
+exports.getTasks = (req, res) => {
+    res.send("Get all tasks controllers");
 };
 
-exports.createTask = (req,res) =>{
+exports.createTask = (req, res) => {
     res.send("create new task");
-
 };
 
-exports.getTask = (req,res) =>{
-    res.send("Get particular task controllers ");
-
+exports.getTaskByid = (req, res) => {
+    res.send("Get particular task controllers");
 };
 
-exports.updateTask = (req,res) =>{
+exports.updateTask = (req, res) => {
     res.send("update particular task");
-
 };
-exports.deletetask = (req,res) =>{
+
+exports.deleteTask = (req, res) => {
     res.send("delete the particular task");
 };

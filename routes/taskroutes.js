@@ -11,6 +11,8 @@ const {
   deleteTask
 } = require("../controllers/taskcontrollers"); // Ensure this path is correct
 
+const { protect } = require("../middleware/authMiddleware");
+
 router.get("/", getTasks);
 router.post("/", createTask);
 router.get("/:id", getTaskByid);

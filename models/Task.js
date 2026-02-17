@@ -16,7 +16,12 @@ const taskSchema = new mongoose.Schema({
     enum: ["low", "medium", "high"],
     default: "medium"
   },
-  dueDate: Date
+  dueDate: Date,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Users",
+    required: true
+  }
 }, {
   timestamps: true
 });

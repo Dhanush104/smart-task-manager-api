@@ -13,10 +13,12 @@ const {
 
 const { protect } = require("../middleware/authMiddleware");
 
-router.get("/", getTasks);
-router.post("/", createTask);
-router.get("/:id", getTaskByid);
-router.put("/:id", updateTask); // This will now find a real function
-router.delete("/:id", deleteTask);
+router.route("/")
+  .get(protect, getTasks)
+  .post(protect, createTask);
+router.route("/:id")
+  .get(protect, getTaskByid)
+  .put(protect, updateTask)
+  .delete(protect, deleteTask);
 
 module.exports = router; 
